@@ -1,0 +1,17 @@
+<%= form_for(@user) do |f| %>
+  <%= f.label :name %>
+  <%= f.text_field :name %>
+
+  <%= f.fields_for :user_address do |a| %>
+    <%= a.label :state %>
+    <%= a.text_field :state %>
+    <%= a.label :city %>
+    <%= a.text_field :city %>
+    <%= a.label :zip_code %>
+    <%= a.text_field :zip_code %>
+    <%= a.label :other %>
+    <%= a.text_field :other %>
+  <% end %>
+
+  <%= f.submit %>
+<% end %>
