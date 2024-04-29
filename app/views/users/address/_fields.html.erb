@@ -1,13 +1,15 @@
 <div data-controller="address">
-  <%= address.label :zip_code %>
-  <%= address.text_field :zip_code, data: { address_target: "zipCode", action: "address#fetch" } %>
 
-  <%= address.label :state %>
-  <%= address.text_field :state, data: { address_target: "state" } %>
+    <%= address.label :zip_code %>
+    <%= address.text_field :zip_code, data: { address_target: "zipCode", action: "address#fetch" } %>
 
-  <%= address.label :city %>
-  <%= address.text_field :city, data: { address_target: "city" } %>
+    <%= address.label :state %>
+    <%= address.text_field :state, data: { address_target: "state" } %>
 
-  <%= address.label :other %>
-  <%= address.text_field :other, data: { address_target: "other" } %>
+    <%= address.label :city %>
+    <%= address.text_field :city, data: { address_target: "city" } %>
+
+    <%= address.label :other %>
+    <%= address.text_field :other, data: { address_target: "other" } %>
+
 </div>

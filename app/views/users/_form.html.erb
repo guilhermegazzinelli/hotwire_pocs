@@ -1,10 +1,11 @@
-<%= form_for(@user) do |f| %>
+<%= form_for(user) do |f| %>
   <%= f.label :name %>
   <%= f.text_field :name %>
-
-  <%= f.fields_for :user_address do |a| %>
-    <%= render 'users/address/fields', address: a %>
-  <% end %>
+  <user-address id="address">
+    <%= f.fields_for :user_address do |a| %>
+      <%= render 'users/address/fields', address: a %>
+    <% end %>
+  </user-address>
 
   <%= f.submit %>
 <% end %>

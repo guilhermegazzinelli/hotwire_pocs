@@ -15,20 +15,8 @@ export default class extends Controller {
 
     if (zipCode.length !== 8) return
 
-    get(`/address/via_cep/${zipCode}`, { responseKind: "json" })
-      .then(response => response.json)
-      .then(data => this.#updateFields(data))
-      .catch(error => {
-        console.error("Erro ao buscar endereço:", error);
-      });
-  }
+    get(`/address/via_cep/${zipCode}`, { responseKind: "turbo-stream" })
 
-  #updateFields(data) {
-    const userAddress = new UserAddress(data)
-
-    this.stateTarget.value = userAddress.state
-    this.cityTarget.value = userAddress.city
-    this.otherTarget.value = userAddress.other
   }
 }
 
