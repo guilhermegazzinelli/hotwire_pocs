@@ -2,9 +2,7 @@
   <%= f.label :name %>
   <%= f.text_field :name %>
   <user-address id="address">
-    <%= f.fields_for :user_address do |a| %>
-      <%= render 'users/address/fields', address: a %>
-    <% end %>
+    <%= render 'users/address/fields', user_address: user.user_address %>
   </user-address>
 
   <%= f.submit %>

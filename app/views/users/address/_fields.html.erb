@@ -1,15 +1,15 @@
 <div data-controller="address">
+    <%= fields_for "user[user_address_attributes]", user_address do |a| %>
+        <%= a.label :zip_code %>
+        <%= a.text_field :zip_code, data: { address_target: "zipCode", action: "address#fetch" } %>
 
-    <%= address.label :zip_code %>
-    <%= address.text_field :zip_code, data: { address_target: "zipCode", action: "address#fetch" } %>
+        <%= a.label :state %>
+        <%= a.text_field :state, data: { address_target: "state" } %>
 
-    <%= address.label :state %>
-    <%= address.text_field :state, data: { address_target: "state" } %>
+        <%= a.label :city %>
+        <%= a.text_field :city, data: { address_target: "city" } %>
 
-    <%= address.label :city %>
-    <%= address.text_field :city, data: { address_target: "city" } %>
-
-    <%= address.label :other %>
-    <%= address.text_field :other, data: { address_target: "other" } %>
-
+        <%= a.label :other %>
+        <%= a.text_field :other, data: { address_target: "other" } %>
+    <% end %>
 </div>
